@@ -29,17 +29,25 @@ $(function addItems() {
 
 
 
-//---------code to check/uncheck items---------->
+//cod to check/uncheck items w/ event delegation
 $(function toggleItems() {
-    $('.shopping-item-toggle').click(function(event) {
+    $('ul').on('click', '.shopping-item-toggle', function(event) {
         $(this).parent().siblings().toggleClass('shopping-item__checked');
-        //let statusCheck = $(this).parent().siblings().is('.shopping-item__checked');
-        //console.log(statusCheck);
     });
 });
 
 
-//-------code to delete items---------------->
+//---------code to check/uncheck items---------->
+// $(function toggleItems() {
+//     $('.shopping-item-toggle').click(function(event) {
+//         $(this).parent().siblings().toggleClass('shopping-item__checked');
+//         //let statusCheck = $(this).parent().siblings().is('.shopping-item__checked');
+//         //console.log(statusCheck);
+//     });
+// });
+
+
+//-------code to delete items w/ event delegation---------------->
 $(function deleteItems() {
     $('ul').on('click', '.shopping-item-delete', function(event) {
         $(this).closest('li').remove();
@@ -48,11 +56,6 @@ $(function deleteItems() {
 
 
 
-//---------code to delete items w/out event delegation---------->
-// $(function deleteItems() {
-//     $('.shopping-item-delete').click(function(event) {
-//         $(this).closest('li').remove();
-//     });
-// });
+
 
 
