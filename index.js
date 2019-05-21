@@ -2,8 +2,7 @@
 //2. dynamically add and remove HTML elements and apply styles
 //3. enter items  by adding text and hitting 'return' or 'add item' button
 //4. check and uncheck items by clicking the 'check' button
-//5. permanently remove items fro the list
-// try using .submit(), .preventDefault(), toggleClass(), and closest
+// try using .submit(), .preventDefault(), toggleClass()
 
 
 //---------code for adding new items---------->
@@ -34,15 +33,20 @@
 
 
 //---------code to check/uncheck items---------->
-
+$(function toggleItems() {
+    $('.shopping-item-toggle').click(function(event) {
+        $(this).parent().siblings().toggleClass('shopping-item__checked');
+        //let statusCheck = $(this).parent().siblings().is('.shopping-item__checked');
+        //console.log(statusCheck);
+    });
+});
 
 
 
 //---------code to delete items---------->
 $(function deleteItems() {
     $('.shopping-item-delete').click(function(event) {
-        this.closest("li").remove();
-        console.log("delete was clicked");
+        $(this).closest('li').remove();
     });
 });
 
